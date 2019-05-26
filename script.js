@@ -17,7 +17,7 @@ const outpuDir = (output, keepDir) => {
   mkDirpAsync(output)
 }
 
-const setTypeImage = (imageSharp, outputFormat) => {
+const setImageType = (imageSharp, outputFormat) => {
   switch (outputFormat) {
     case 'jpg': return imageSharp.jpeg({
       quality: 75,
@@ -37,7 +37,7 @@ const setTypeImage = (imageSharp, outputFormat) => {
 }
 
 // [576,768,992,1200]
-const converJPGtoWebP = async () => {
+const converter = async () => {
   try {
     const { breakpoints, output, sources, format, height, keep } = args
     const keepDir = (keep === undefined || keep === null) ? '' : keep.toLowerCase() === 'true'
@@ -79,7 +79,7 @@ const converJPGtoWebP = async () => {
         })
         // set type image [jepg, png, webp]
         // --format=webp or default jpg
-        setTypeImage(imageSharp, outputFormat)
+        setImageType(imageSharp, outputFormat)
         // save to specific folder
         // --breakpoints=576 - required parameter
         imageSharp.toFile(`${outputArg}/${breakpointsFolder}/${newImage}`)
@@ -91,4 +91,4 @@ const converJPGtoWebP = async () => {
   }
 }
 
-converJPGtoWebP()
+converter()
