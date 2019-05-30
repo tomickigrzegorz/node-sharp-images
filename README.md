@@ -54,7 +54,7 @@ images
 ```
 
 ```
-structure
+sources
 ├──berlin
 ├──├──IMG_001.jpg
 ├──├──IMG_002.jpg
