@@ -16,11 +16,11 @@ Exampel `node script.js --breakpoints=576`
 
 arguments | default | require | description
 ---- | :-------: | :--------: | -----------
-**--breakpoints** |  | ✔ | --breakpoints=500,600,700 or --breakpoints=500
-**--format** | `jpg` |  | --format=webp or --format=png
-**--sources** | `sources` | | --sources=images or --sources=images/berlin
-**--output** | `output` | | --keep=picture or --sources=picure/berlin
-**--keep** |  | | --keep=true Keep output folder
+`--breakpoints` |  | ✔ | --breakpoints=500,600,700 or --breakpoints=500
+`--format` | `jpg` |  | --format=webp or --format=png
+`--sources` | `sources` | | --sources=images or --sources=images/berlin
+`--output` | `output` | | --keep=picture or --sources=picure/berlin
+`--keep` |  | | --keep=true Keep output folder
 
 ### Examples
 
