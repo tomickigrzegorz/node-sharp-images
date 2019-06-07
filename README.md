@@ -1,10 +1,10 @@
 ## Photo converter
 
 ### Instruction
-Instal latest Node.js
-`git clone `
-Open `cd shareimage`  
-Next run `yarn` or `npm install`
+* Instal latest Node.js  
+* `git clone `  
+* Open `cd shareimage`  
+* Next run `yarn` or `npm install`
 
 ### How to run
 
