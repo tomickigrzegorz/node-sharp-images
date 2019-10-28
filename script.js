@@ -39,13 +39,13 @@ const setImageType = (imageSharp, outputFormat) => {
 // [576,768,992,1200]
 const converter = async () => {
   try {
-    const { breakpoints, output, sources, format, height, keep } = args
-    const keepDir = (keep === undefined || keep === null) ? '' : keep.toLowerCase() === 'true'
+    const { b, o, s, f, height, k } = args
+    const keepDir = (k === undefined || k === null) ? '' : k.toLowerCase() === 'true'
 
-    const points = breakpoints
-    const outputArg = output || 'public'
-    const input = sources || 'sources'
-    const outputFormat = format || 'jpg'
+    const points = b // breakpoints
+    const outputArg = o || 'output' // output
+    const input = s || 'sources' // sources
+    const outputFormat = f || 'jpg' // format
     const outputHeight = parseInt(height) || 800
     const breakpointsArgs = Number.isInteger(points) === true ? Array.of(points) : points.split(',')
 
