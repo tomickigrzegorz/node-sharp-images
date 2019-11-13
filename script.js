@@ -1,7 +1,6 @@
 const { existsSync, readdir, mkdirSync } = require('fs')
 const { promisify } = require('util')
 const { remove } = require('fs-extra')
-const path = require('path')
 const sharp = require('sharp')
 const inquirer = require('inquirer')
 const readDirAsync = promisify(readdir)
@@ -52,10 +51,8 @@ const converter = async (args) => {
     const outputHeight = height
     const breakpointsArgs = Number.isInteger(points) === true ? Array.of(points) : points.split(',')
 
-    console.log(path.resolve())
-
-    const outputDir = path.resolve(`./output/${input}`)
-    const sourceDir = path.resolve(`./sources/${input}`)
+    const outputDir = `./output/${input}`
+    const sourceDir = `./sources/${input}`
 
     // checking if the folder is in sources
     if (!existsSync(sourceDir)) {
@@ -97,20 +94,11 @@ const converter = async (args) => {
       })
     })
   } catch (err) {
-    // return Object.assign(err)
     console.log(err.message)
   }
 }
 
-// converter()
-
 inquirer.prompt([
-  {
-    type: 'input',
-    name: 'points',
-    message: 'Select breakpoints e.g. 576,768,992,1200',
-    default: '576'
-  },
   {
     type: 'input',
     name: 'input',
@@ -121,6 +109,12 @@ inquirer.prompt([
       }
       return true
     }
+  },
+  {
+    type: 'input',
+    name: 'points',
+    message: 'Select breakpoints e.g. 576,768,992,1200',
+    default: '576'
   },
   {
     type: 'list',
@@ -142,7 +136,7 @@ inquirer.prompt([
   {
     type: 'confirm',
     name: 'keepDir',
-    message: 'keep folders',
+    message: 'Keep folders',
     default: true
   }
 ]).then(answers => {
