@@ -32,12 +32,9 @@ The selection menu will appear:
 ? Keep folders
 ```
 > The ability to choose whether to clear the output folder or leave its contents. Choosing `Y` - leaves the folder, choosing `n` deletes the contents of the output folder. The default is set to `Y`
-```
 
-This command will create such a structure for us:
-```
 
-### Sources
+### Folder structure
 
 ```
 sources
@@ -46,8 +43,6 @@ sources
     ├── IMG_0368.jpg
     └── ...
 ```
-
-### Output
 
 ```
 output
