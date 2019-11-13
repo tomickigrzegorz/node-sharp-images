@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/tomik23/node-sharp-images",
   "bin": {
-    "sharp-image": "./index.js"
+    "sharpimage": "./index.js"
   },
   "start": "node package-script.js",
   "keywords": [
