@@ -9,7 +9,7 @@
 
 First you must have folder with images, default is `sources/YourFolder/YourPictures` folder where is all images to convert.
 ```
-node script
+node index
 ```
 The selection menu will appear:
 ```
