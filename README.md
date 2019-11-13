@@ -19,15 +19,15 @@ The selection menu will appear:
 ```
 ? Select a format
 ```
-> Choose one of three dsotepne formats [jpg, png, webp], jpg is set by default
+> Choose one of three available formats `[jpg, png, webp]`, `jpg` is set by default
 ```
 ? Select breakpoints e.g. 576,768,992,1200
 ```
-> Enter the size of the decimal photos, as a result we will get folders with this name and photos in this humidity. The default breakpoints are set to 576
+> Enter the size of the decimal photos, as a result we will get folders with this name and photos in this humidity. The default breakpoints are set to `576`
 ```
 ? Maximum photo height
 ```
-> The inserted number will be responsible for the height of the photos, useful especially when the photo is vertical, then aspect ratio is maintained. The default is 800
+> The inserted number will be responsible for the height of the photos, useful especially when the photo is vertical, then aspect ratio is maintained. The default is `800`
 ```
 ? Keep folders
 ```
