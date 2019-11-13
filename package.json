@@ -1,5 +1,5 @@
 {
-  "name": "sharpimage",
+  "name": "sharp-image",
   "version": "1.0.1",
   "description": "Photo converter on node",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/tomik23/node-sharp-images",
   "bin": {
-    "sharpimage": "./index.js"
+    "sharp-image": "./index.js"
   },
   "start": "node package-script.js",
   "keywords": [
