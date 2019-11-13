@@ -1,6 +1,6 @@
 {
   "name": "sharpimage",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Photo converter on node",
   "main": "index.js",
   "author": "Grzegorz Tomicki <gtomik@gmail.com>",
@@ -12,7 +12,6 @@
   "bin": {
     "sharpimage": "./index.js"
   },
-  "start": "node package-script.js",
   "keywords": [
     "breakpoints",
     "format",
