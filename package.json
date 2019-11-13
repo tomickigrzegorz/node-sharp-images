@@ -2,16 +2,18 @@
   "name": "sharpimage",
   "version": "1.0.0",
   "description": "Photo converter on node",
-  "main": "script.js",
+  "main": "./lib/index.js",
   "author": "Grzegorz Tomicki <gtomik@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomik23/node-sharp-images.git"
+    "url": "https://github.com/tomik23/node-sharp-images"
   },
   "homepage": "https://github.com/tomik23/node-sharp-images",
   "bin": {
-    "sharpimage": "./script.js"
+    "shareimage": "./bin/global.js"
   },
+  "preferGlobal": true,
+  "start": "node package-script.js",
   "keywords": [
     "breakpoints",
     "format",
