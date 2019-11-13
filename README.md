@@ -15,7 +15,7 @@ The selection menu will appear:
 ```
 ? Folder to convert
 ```
-> Mandatory field, enter the name of the folder that contains the images, this folder must be in the sources folder
+> Mandatory field, enter the name of the folder that contains the images, this folder must be in the `sources` folder
 ```
 ? Select a format
 ```
@@ -23,7 +23,7 @@ The selection menu will appear:
 ```
 ? Select breakpoints e.g. 576,768,992,1200
 ```
-> Enter the size of the decimal photos, as a result we will get folders with this name and photos in this humidity. The default breakpoints are set to `576`
+> Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576`
 ```
 ? Maximum photo height
 ```
