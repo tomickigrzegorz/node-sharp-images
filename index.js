@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict'
+
 const { existsSync, readdir, mkdirSync } = require('fs')
 const { promisify } = require('util')
 const { remove } = require('fs-extra')
