@@ -1,5 +1,5 @@
 {
-  "name": "nodesharpimage",
+  "name": "sharpimage",
   "version": "1.0.0",
   "description": "Photo converter on node",
   "main": "script.js",
@@ -9,6 +9,9 @@
     "url": "https://github.com/tomik23/node-sharp-images.git"
   },
   "homepage": "https://github.com/tomik23/node-sharp-images",
+  "bin": {
+    "sharpimage": "./script.js"
+  },
   "keywords": [
     "breakpoints",
     "format",
@@ -19,9 +22,8 @@
     "optimization"
   ],
   "dependencies": {
-    "minimist": "^1.2.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
     "sharp": "^0.23.2"
   },
   "devDependencies": {
