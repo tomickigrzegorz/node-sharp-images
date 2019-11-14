@@ -1,9 +1,11 @@
 ## Photo converter
 
-### Instruction
-* Instal latest Node.js  
-* `git clone `  
-* Next run `yarn` or `npm install`
+### Clone the repo and install dependencies
+```bash
+git clone 
+cd node-sharp-images
+npm i
+```
 
 ### How to run
 
