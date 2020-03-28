@@ -10,6 +10,7 @@ const inquirer = require('inquirer')
 const readDirAsync = promisify(readdir)
 
 const outpuDir = (output, keepDir) => {
+  console.log(output, keepDir)
   try {
     if (!keepDir) {
       remove('./output')
@@ -84,7 +85,7 @@ const converter = async (args) => {
           width: parseInt(breakpointsFolder),
           // default max height is 800px
           // if you set height then width i change also
-          height: outputHeight,
+          height: +outputHeight,
           // maintain aspect ratio
           fit: sharp.fit.inside,
           // do not enlarge if the width or height are already less than the specified dimensions
@@ -117,7 +118,7 @@ inquirer.prompt([
   {
     type: 'input',
     name: 'points',
-    message: 'Select breakpoints e.g. 576,768,992,1200',
+    message: 'Select breakpoints e.g. 576,768,992,1200,...',
     default: '576'
   },
   {

@@ -23,9 +23,9 @@ The selection menu will appear:
 ```
 > Choose one of three available formats `[jpg, png, webp]`, `jpg` is set by default
 ```
-? Select breakpoints e.g. 576,768,992,1200
+? Select breakpoints e.g. 576,768,...
 ```
-> Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576`
+> Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576,768,992,1200`
 ```
 ? Maximum photo height
 ```
