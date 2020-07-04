@@ -1,45 +1,41 @@
-#!/usr/bin/env node
-
 'use strict'
 
-const { existsSync, readdir, mkdirSync } = require('fs')
+const { existsSync, readdir, mkdir } = require('fs')
 const { promisify } = require('util')
 const { remove } = require('fs-extra')
 const sharp = require('sharp')
 const inquirer = require('inquirer')
 const readDirAsync = promisify(readdir)
 
+inquirer.registerPrompt('directory', require('inquirer-directory'))
+
 const outpuDir = (output, keepDir) => {
-  console.log(output, keepDir)
-  try {
-    if (!keepDir) {
-      remove('./output')
-        .then(() => {
-          mkdirSync(output, { recursive: true })
+  if (!keepDir) {
+    remove('./output')
+      .then(() => {
+        mkdir(output, { recursive: true }, err => {
+          if (err) throw console.log(err)
         })
-        .catch(err => {
-          console.error(err)
-        })
-    } else {
-      mkdirSync(output, { recursive: true })
-    }
-  } catch (err) {
-    console.error(err)
+      })
+  } else {
+    mkdir(output, { recursive: true }, err => {
+      if (err) throw console.log(err)
+    })
   }
 }
 
-const setImageType = (imageSharp, outputFormat) => {
+const setImageType = (imageSharp, quality, outputFormat) => {
   switch (outputFormat) {
     case 'jpg': return imageSharp.jpeg({
-      quality: 75,
+      quality,
       progressive: true
     })
     case 'webp': return imageSharp.webp({
-      quality: 60
+      quality
     })
     case 'png': return imageSharp.png({
       compressionLevel: 6,
-      quality: 65,
+      quality,
       progressive: true
     })
     default:
@@ -50,14 +46,17 @@ const setImageType = (imageSharp, outputFormat) => {
 // [576,768,992,1200]
 const converter = async (args) => {
   try {
-    const { points, input, format, height, keepDir } = args
+    const { from, points, format, quality, height, keepDir } = args
+
+    // console.log(args)
 
     const outputFormat = format
     const outputHeight = height
+    const qualityImage = +quality
     const breakpointsArgs = Number.isInteger(points) === true ? Array.of(points) : points.split(',')
 
-    const outputDir = `./output/${input}`
-    const sourceDir = `./sources/${input}`
+    const outputDir = `./output/${from}`
+    const sourceDir = `./sources/${from}`
 
     // checking if the folder is in sources
     if (!existsSync(sourceDir)) {
@@ -65,15 +64,23 @@ const converter = async (args) => {
       return false
     }
 
+    // console.log(breakpointsArgs)
+
     // remove output folder and create new one
-    outpuDir(outputDir, keepDir)
+    breakpointsArgs.forEach(breakpointsFolder => {
+      outpuDir(`${outputDir}/${breakpointsFolder}`, keepDir)
+    })
+
+    await new Promise((resolve, reject) => {
+      setTimeout(() => resolve('done !'), 5000)
+    })
 
     // get async files
     const res = await readDirAsync(sourceDir)
 
     breakpointsArgs.forEach(breakpointsFolder => {
       // remove output folder and create new one
-      outpuDir(`${outputDir}/${breakpointsFolder}`, keepDir)
+      // outpuDir(`${outputDir}/${breakpointsFolder}`, keepDir)
 
       res.forEach(async (image) => {
         // file extension replace
@@ -83,19 +90,27 @@ const converter = async (args) => {
         imageSharp.resize({
           // set width from command line or get default with 1200px
           width: parseInt(breakpointsFolder),
+
           // default max height is 800px
           // if you set height then width i change also
           height: +outputHeight,
+
           // maintain aspect ratio
           fit: sharp.fit.inside,
+
           // do not enlarge if the width or height are already less than the specified dimensions
           withoutEnlargement: true
 
         })
         // set type image [jpg, png, webp]
-        setImageType(imageSharp, outputFormat)
+        setImageType(imageSharp, qualityImage, outputFormat)
+
         // save to specific folder - breakpoints
         imageSharp.toFile(`${outputDir}/${breakpointsFolder}/${newImage}`)
+
+        // console.clear()
+        // show in console
+        console.log(`saving file [ ${breakpointsFolder}/${newImage} ]`)
       })
     })
   } catch (err) {
@@ -105,21 +120,16 @@ const converter = async (args) => {
 
 inquirer.prompt([
   {
-    type: 'input',
-    name: 'input',
+    type: 'directory',
+    name: 'from',
     message: 'Folder to convert',
-    validate: input => {
-      if (!input.length) {
-        return 'Enter the folder to convert'
-      }
-      return true
-    }
+    basePath: './sources'
   },
   {
     type: 'input',
     name: 'points',
     message: 'Select breakpoints e.g. 576,768,992,1200,...',
-    default: '576'
+    default: '576,768,992,1200'
   },
   {
     type: 'list',
@@ -131,6 +141,12 @@ inquirer.prompt([
     ],
     message: 'Select a format',
     default: ['jpg']
+  },
+  {
+    type: 'input',
+    name: 'quality',
+    message: 'Set photo quality [1 to 100]',
+    default: 60
   },
   {
     type: 'input',
