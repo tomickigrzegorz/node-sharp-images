@@ -1,6 +1,6 @@
 {
   "name": "sharpimage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Photo converter on node",
   "main": "index.js",
   "repository": {
@@ -11,6 +11,7 @@
   "bin": {
     "sharpimage": "./index.js"
   },
+  "author": "Grzegorz Tomicki",
   "keywords": [
     "breakpoints",
     "format",
@@ -21,17 +22,18 @@
     "optimization"
   ],
   "dependencies": {
-    "fs-extra": "^9.0.0",
-    "inquirer": "^7.1.0",
-    "sharp": "^0.25.2"
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.0",
+    "sharp": "^0.25.4"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.3.1",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "inquirer-directory": "^2.2.0"
   },
   "license": "MIT",
   "engines": {
