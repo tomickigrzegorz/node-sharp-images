@@ -19,7 +19,7 @@ node index
 ```
 > The selection menu will appear, from which we choose the folder we want to process.
 ```
-? Select breakpoints e.g. 576,768,992,1200...
+? Select breakpoints e.g. 576,768,992,1200..., default: 576,768,992,1200
 ```
 > Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576,768,992,1200`
 ```
@@ -27,12 +27,12 @@ node index
 ```
 > Choose one of three available formats `[jpg, png, webp]`, `jpg` is set by default
 ```
-? Set photo quality [1 to 100]. The default number 60
+? Set photo quality [1 to 100], default: (60)
 ```
-> Set the quality of photos. In the range of 1 to 100
+> Set the quality of photos. In the range of 1 to 100. The default number is 60
 
 ```
-? Maximum photo height
+? Maximum photo height, default: (800)
 ```
 > The inserted number will be responsible for the height of the photos, useful especially when the photo is vertical, then aspect ratio is maintained. The default is `800`
 ```
