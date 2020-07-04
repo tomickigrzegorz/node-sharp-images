@@ -85,6 +85,7 @@ output
   <source data-srcset="./images/chiny/576/IMG_6940.jpg" media="(max-width: 576px)">
 
   <img data-src="./images/chiny/1200/IMG_6940.jpg" alt="">
+  <!-- for seo when js is off -->
   <noscript><img src="./images/chiny/1200/IMG_6940.jpg" alt=""></noscript>
 </picture>
 ```
