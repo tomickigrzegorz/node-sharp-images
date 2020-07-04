@@ -13,7 +13,7 @@ First you must have folder with images, default is `sources/YourFolder/YourPictu
 ```
 node index
 ```
-> Tun in console
+> Run in console
 ```
 ? Folder to convert
 ```
