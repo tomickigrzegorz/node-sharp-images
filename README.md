@@ -27,7 +27,7 @@ node index
 ```
 > Choose one of three available formats `[jpg, png, webp]`, `jpg` is set by default
 ```
-? Set photo quality [1 to 100]. The default `60`
+? Set photo quality [1 to 100]. The default number 60
 ```
 > Set the quality of photos. In the range of 1 to 100
 
