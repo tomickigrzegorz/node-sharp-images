@@ -128,7 +128,7 @@ inquirer.prompt([
   {
     type: 'input',
     name: 'points',
-    message: 'Select breakpoints e.g. 576,768,992,1200,...',
+    message: 'Select breakpoints e.g. 576,768,992,1200,..., default:',
     default: '576,768,992,1200'
   },
   {
@@ -139,19 +139,19 @@ inquirer.prompt([
       { value: 'png' },
       { value: 'webp' }
     ],
-    message: 'Select a format',
+    message: 'Select a format, default:',
     default: ['jpg']
   },
   {
     type: 'input',
     name: 'quality',
-    message: 'Set photo quality [1 to 100]',
+    message: 'Set photo quality [1 to 100], default:',
     default: 60
   },
   {
     type: 'input',
     name: 'height',
-    message: 'Maximum photo height',
+    message: 'Maximum photo height, default:',
     default: 800
   },
   {
