@@ -9,23 +9,26 @@ npm i
 
 ### How to run
 
-First you must have folder with images, default is `sources/YourFolder/YourPictures` folder where is all images to convert.
+First you must have folder with images, default is `sources/YourFolder/YourPictures.jpg` folder where is all images to convert. See [folder structure](https://github.com/tomik23/node-sharp-images#folder-structure).
 ```
 node index
 ```
-The selection menu will appear:
+The selection menu will appear, from which we choose the folder we want to process.
 ```
 ? Folder to convert
 ```
-> Mandatory field, enter the name of the folder that contains the images, this folder must be in the `sources` folder
+? Select breakpoints e.g. 576,768,992,1200...
+```
+> Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576,768,992,1200`
 ```
 ? Select a format
 ```
 > Choose one of three available formats `[jpg, png, webp]`, `jpg` is set by default
 ```
-? Select breakpoints e.g. 576,768,...
+? Set photo quality [1 to 100]. The default `60`
 ```
-> Enter the size of the photos, as a result we will get folders with this name and photos in this width. The default breakpoint is set to `576,768,992,1200`
+> Set the quality of photos. In the range of 1 to 100
+
 ```
 ? Maximum photo height
 ```
