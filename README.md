@@ -67,3 +67,24 @@ output
         ├── IMG_0368.jpg
         └── ...
 ```
+
+### How to use? [live examlpe](http://www.grzegorztomicki.pl/chiny.html)
+
+```html
+<picture>
+  <source data-srcset="./images/chiny/1200/IMG_6940.webp" media="(min-width: 993px)" type="image/webp">
+  <source data-srcset="./images/chiny/1200/IMG_6940.jpg" media="(min-width: 992px)">
+
+  <source data-srcset="./images/chiny/992/IMG_6940.webp" media="(min-width: 769px) and (max-width: 992px)" type="image/webp">
+  <source data-srcset="./images/chiny/992/IMG_6940.jpg" media="(min-width: 769px) and (max-width: 992px)">
+
+  <source data-srcset="./images/chiny/768/IMG_6940.webp" media="(min-width: 577px) and (max-width: 768px)" type="image/webp">
+  <source data-srcset="./images/chiny/768/IMG_6940.jpg" media="(min-width: 577px) and (max-width: 768px)">
+
+  <source data-srcset="./images/chiny/576/IMG_6940.webp" media="(max-width: 576px)" type="image/webp">
+  <source data-srcset="./images/chiny/576/IMG_6940.jpg" media="(max-width: 576px)">
+
+  <img data-src="./images/chiny/1200/IMG_6940.jpg" alt="">
+  <noscript><img src="./images/chiny/1200/IMG_6940.jpg" alt=""></noscript>
+</picture>
+```
