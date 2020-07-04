@@ -13,9 +13,11 @@ First you must have folder with images, default is `sources/YourFolder/YourPictu
 ```
 node index
 ```
-The selection menu will appear, from which we choose the folder we want to process.
+> Tun in console
 ```
 ? Folder to convert
+```
+> The selection menu will appear, from which we choose the folder we want to process.
 ```
 ? Select breakpoints e.g. 576,768,992,1200...
 ```
